@@ -133,15 +133,11 @@ function deleteAnimal(index) {
     renderAnimalCards(animals); // Atualiza os cards sem recarregar a página
 }
 
-// Variáveis para os elementos da câmera e do arquivo
+// Captura e armazena a imagem da câmera
 const video = document.getElementById("camera");
 const canvas = document.getElementById("canvas");
 const captureBtn = document.getElementById("capture-btn");
-const fileInput = document.getElementById("animal-image"); // Campo de escolha de arquivo
 
-let capturedImage = "";
-
-// Captura e armazena a imagem da câmera
 if (video && canvas && captureBtn) {
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
@@ -161,19 +157,6 @@ if (video && canvas && captureBtn) {
         alert("Foto capturada com sucesso!");
     });
 }
-
-// Função para ler a imagem do arquivo selecionado
-fileInput.addEventListener("change", function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            capturedImage = e.target.result;
-            alert("Imagem selecionada com sucesso!");
-        };
-        reader.readAsDataURL(file);
-    }
-});
 
 // Registra um novo animal
 const registerForm = document.getElementById("registerForm");
