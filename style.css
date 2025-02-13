@@ -1,0 +1,318 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lora', serif; /* Fonte mais sóbria e legível */
+}
+
+/* Corpo da página */
+body {
+    background-color: #f1f3f4; /* Fundo neutro e acolhedor */
+    color: #333; /* Texto em tom mais suave */
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2d6a4f; /* Verde mais suave e confiável */
+    padding: 30px 0;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #97c3b2; /* Verde claro que harmoniza com o tema */
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+/* Seção de formulário */
+#home {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#home h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #2d6a4f;
+    font-weight: 700;
+}
+
+/* Formulário */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #97c3b2; /* Cor suave e acolhedora */
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border: 2px solid #2d6a4f; /* Foco mais suave */
+}
+
+.cta-button {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #1f4c39;
+    transform: translateY(-2px); /* Efeito mais suave */
+}
+
+/* Estilo dos Cards */
+.animal-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 270px;
+    margin: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.animal-card:hover {
+    transform: scale(1.05);
+    background-color: #f9f9f9; /* Tom mais suave ao passar o mouse */
+}
+
+.animal-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 4px solid #2d6a4f; /* Verde mais suave */
+}
+
+.animal-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0;
+    color: #333;
+}
+
+.animal-card p {
+    font-size: 14px;
+    color: #7a6e5c;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.adoption-flag {
+    background-color: #97c3b2;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    z-index: 1;
+}
+
+.animal-card .adopt-btn, .animal-card .delete-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.animal-card .adopt-btn {
+    background-color: #2d6a4f;
+    color: white;
+}
+
+.animal-card .adopt-btn:hover {
+    background-color: #1f4c39;
+    transform: translateY(-2px);
+}
+
+.animal-card .delete-btn {
+    background-color: #c0392b;
+    color: white;
+}
+
+.animal-card .delete-btn:hover {
+    background-color: #e74c3c;
+    transform: translateY(-2px);
+}
+
+/* Layout para cards na horizontal */
+#animal-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 8px 0;
+    }
+
+    #home {
+        padding: 20px;
+    }
+
+    #animal-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animal-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    width: 420px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #2d6a4f;
+}
+
+.modal-content input, .modal-content textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 2px solid #97c3b2;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2d6a4f;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #1f4c39;
+    transform: translateY(-2px);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Ícone de Pata */
+.paw-icon {
+    font-size: 32px;
+    color: #2d6a4f;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.paw-icon:hover {
+    transform: scale(1.3);
+    color: #97c3b2;
+}

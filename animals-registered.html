@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais Registrados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <h1>Animal Rescue</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register-animal.html">Registrar Animal</a>
+                <a href="animals-registered.html">Animais Registrados</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="filters">
+        <input type="text" id="search-animal" placeholder="Buscar por nome...">
+        <select id="animal-type">
+            <option value="">Todos os tipos</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="outros">Outros</option>
+        </select>
+        <button onclick="filterAnimals()">Filtrar</button>
+    </div>
+    
+
+    <div id="animal-cards" class="animal-cards">
+        <div class="animal-card">
+            <img src="" alt="Imagem do Animal">
+            <h3>Nome do Animal</h3>
+            <p>Idade: 2 anos</p>
+            <button onclick="openModal()">Adotar</button>
+        </div>
+    </div>
+    
+
+    <!-- Modal de Adoção -->
+    <div id="adoption-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Formulário de Adoção</h2>
+            <form id="adopt-form">
+                <input type="hidden" id="animal-index">
+                <input type="text" id="adopter-name" placeholder="Seu nome" required>
+                <input type="email" id="adopter-email" placeholder="Seu e-mail" required>
+                <textarea id="adopter-message" placeholder="Por que deseja adotar?" required></textarea>
+                <button type="submit" class="cta-button">Finalizar Adoção</button>
+            </form>
+        </div>
+    </div>
+
+
+    
+    
+    <footer>
+        <p>Nos siga nas redes sociais: <a href="facebook-link">Facebook</a>, <a href="instagram-link">Instagram</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

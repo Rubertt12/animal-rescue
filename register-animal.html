@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Animal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Animal Rescue</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="register-animal.html">Registrar Animal</a>
+                <a href="animals-registered.html">Animais Registrados</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="home" class="section">
+            <h2>Registrar Animal</h2>
+            <form id="registerForm" class="form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Nome do animal" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="location" placeholder="Localização" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="description" placeholder="Descrição do animal" required></textarea>
+                </div>
+
+                <!-- Tipo de Animal -->
+                <div class="form-group">
+                    <label for="animal-type">Selecione o tipo de animal:</label>
+                    <select id="animal-type" required>
+                        <option value="">Escolha o tipo</option>
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="outros">outros</option>
+                    </select>
+                </div>
+
+                <!-- Área para upload de foto -->
+                <div class="form-group">
+                    <label for="imageUpload">Carregar Foto</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+
+                <!-- Área para capturar a foto com a câmera -->
+                <div id="camera-container" class="form-group">
+                    <label for="camera">Ou tire uma foto com a câmera</label>
+                    <video id="camera" width="100%" height="240" autoplay></video>
+                    <button type="button" id="capture-btn" class="cta-button">Capturar Foto</button>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+
+                <button type="submit" class="cta-button">Cadastrar Animal</button>
+            </form>
+            <div id="form-feedback"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
